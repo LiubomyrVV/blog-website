@@ -1,0 +1,14 @@
+.logo {
+    display: flex; 
+
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.logo > img {
+    width: 32px;
+    margin-right: 18px;
+}
+.logo > h1 {
+   align-self: center;
+}

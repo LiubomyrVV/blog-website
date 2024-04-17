@@ -1,0 +1,111 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    margin-bottom: 80px;
+    
+}
+.post  .title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    color: var(--first-content-color);
+    font-size: 32px;
+    font-weight: 500;
+    
+
+    
+}
+.cart {
+    padding: 26px;
+}
+.post .title  .button {
+    padding: 12px 36px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--main-bg-color);
+    transition: 100ms ease-in;
+}
+
+.title > .button:hover {
+    background-color: var(--main-bg-color-hover);
+    
+ }
+.title > .button:active {
+    
+    color: var(--main-bg-color);
+    background-color: #fff;
+    border: 2px solid var(--main-bg-color);
+    transform: scale(0.97);
+}
+
+.main {
+    display: flex;
+}
+.main img {
+    border-radius: 24px;
+    min-width: 55%;
+}
+.main .cart {
+    display:  flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.cart button {
+    align-self: flex-start;
+    border: 1px solid var(--main-bg-color);
+    border-radius: 8px;
+    padding: 12px 36px;
+    color: var(--main-bg-color);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 100ms;
+   
+}
+.cart button:hover {
+    background-color: var(--main-bg-color-hover);
+    color: #fff;
+}
+.cart button:active {
+    transform: scale(0.96);
+    transform-origin: center center;
+    color: #fff;
+    background-color: var(--main-bg-color);
+}
+
+
+
+.details {
+    display: flex;
+    gap: 40px;
+}
+.details  .type {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--first-content-color)
+}
+.details .date {
+    font-size: 10px;
+    color: var(--third-content-color)
+}   
+
+@media only screen and (max-width: 1103px) {
+    .main {
+     flex-direction: column;
+    }
+    .main img {
+        margin: -60px 0 0;
+    }
+    .cart {
+    padding: 26px 0;
+    }
+}
+@media only screen and (max-width: 412px) {
+    .post .title  .button {
+       min-width: 125px;
+       margin-left: 10px;
+    }
+}

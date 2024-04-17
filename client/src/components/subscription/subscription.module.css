@@ -1,0 +1,112 @@
+.subscriptionContainer {
+    height: 430px;
+    right: 0;
+    bottom: 0;
+    margin: 0 -60px;
+    overflow: hidden;
+
+}
+.innerWrapper {
+    display: grid;
+    place-items: center;
+    
+    height: 100%;
+    
+}
+.subscription {
+    max-width: 60%;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    color: #fff;
+}
+.description {
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+    color:  #fcd6d6;
+}
+.input {
+    border-radius: 4px;
+    padding: 12px 20px 8px;
+    
+    color: #5A7184;
+    border: none;
+    min-width: 250px;
+}
+.input:focus {
+    outline:  none;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    width: fit-content;
+    margin: 20px auto;
+    
+}
+.submit {
+    padding: 8px 20px;
+    background-color: var(--main-bg-color);
+    border-radius: 4px;
+    border: 1px solid #fff;
+    transition: .2s;
+}
+
+.submit:hover {
+    background-color: var(--main-bg-color-hover);
+}
+
+.submit:active {
+    transform: scale(0.97);
+}
+.inputContainer {
+    position: relative;
+}
+#sub-p {
+    background-color: #5A7184;
+    top: 10px;
+}
+@media only screen and (max-width: 894px) {
+    .subscription {
+        max-width: 70%;
+    }
+}
+@media only screen and (max-width: 812px) {
+  
+    .subscriptionContainer {
+        margin: 0 -20px;
+    }
+    .subscription {
+        max-width: 80%;
+        position: relative;
+        z-index: 1;
+    }
+    
+}
+@media only screen and (max-width: 580px) {
+    .title {
+        font-size: 26px;
+    }
+    .description {
+        width: 90%;
+    }
+    .inputContainer {
+        position: relative;
+    }
+    .input {
+        margin-bottom: 10px;
+    }
+    #subP { 
+        bottom: -7px;
+    }
+   .form {
+    flex-direction: column;
+   }
+    
+}
+
+

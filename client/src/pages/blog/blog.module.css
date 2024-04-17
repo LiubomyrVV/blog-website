@@ -1,0 +1,40 @@
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 50%;
+    margin: 7% auto 9%;
+    text-align: center;
+}
+.titleWrapper > h1 {
+    color: var(--first-content-color);
+    font-size: 28px;
+
+}
+.titleWrapper > h4 {
+    color: var(--second-content-color);
+    font-weight: 600;
+    font-size: 12px;
+
+}
+@media only screen and (max-width: 812px) {
+  
+    .titleWrapper {
+        width: 70%;
+    
+        gap: 8px;
+    }
+}
+@media only screen and (max-width: 480px) {
+  
+    .titleWrapper {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 380px) {
+  
+    .titleWrapper {
+        width: 95%;
+    }
+}

@@ -1,0 +1,87 @@
+.getInTouch > .title {
+    padding: 24px 0 34px;
+    margin: 0 auto;
+    width: 37%;
+    text-align: center;
+}
+.title p {
+    margin-top: 28px;
+}
+.carts {
+    display: flex;
+    padding: 40px 0 80px;
+    max-width: 60%;
+    margin: 0 auto;
+}
+.carts .title {
+    padding: 20px 0;
+}
+.carts figure {
+    margin: 0 auto;
+}
+.carts li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+}
+.icon {
+    display: grid;
+    place-items: center;
+
+    
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+}
+.icon i {
+    color:  #fff;
+    font-size: 20px;
+}
+.mapWrapper  {
+    background-color: bisque;
+    height: 400px;
+    background-image: url('https://wallpapers.com/images/featured/coding-background-9izlympnd0ovmpli.jpg');
+    background-size: cover;
+    border-radius: 24px;
+}
+.contact {
+
+}
+@media only screen and (max-width: 1212px) {
+    .getInTouch > .title {
+        width: 50%;
+    }
+    .carts {
+        max-width: 80%;
+    }
+}
+@media only screen and (max-width: 872px) {
+    .carts {
+        max-width: 100%;
+    }
+
+}
+@media only screen and (max-width: 704px) {
+    .carts {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+}
+
+@media only screen and (max-width: 442px) {
+    .getInTouch > .title {
+        width: 90%;
+    }
+    
+}
+
+
+
+
+

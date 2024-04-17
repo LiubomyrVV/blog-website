@@ -1,0 +1,146 @@
+.form {
+    width: 70%;
+    margin: -248px auto auto;
+    padding: 40px 60px;
+    border-radius: 68px;
+    background-color: #fff;
+    
+}
+
+.form input, .form text-area {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+    font-size: 14px;
+
+}
+.form h2 {
+    margin: 0 0 28px;
+    font-size: 26px;
+}
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+.form .info {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+.form .info div {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+   
+}
+.form .info input {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--third-content-color);
+}
+.form .info input:focus {
+    outline: 2px solid var(--main-bg-color);
+    border: 1px solid transparent;
+}
+
+.form p {
+    color: red;
+    font-weight: 500;
+    margin: 12px 0 0 8px;
+    min-height: 19px;
+}
+
+.form .message {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.form .message textarea {
+    margin-top: 10px;
+    padding: 14px;
+    resize: none;
+    min-height: 148px;
+    border-radius: 8px;
+    border: 1px solid var(--third-content-color);
+}
+.form .info input:focus {
+    outline: 2px solid var(--main-bg-color);
+    border: 1px solid transparent;
+}
+.form button {
+    padding: 8px 18px;
+    width: 160px;
+    margin: 0 auto;
+}
+
+.form button {
+    padding: 12px 18px;
+    width: 160px;
+    margin: 40px auto;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--main-bg-color);
+    transition: 100ms ease-in;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.form button:hover {
+    background-color: var(--main-bg-color-hover);
+    
+ }
+.form button:active {
+    
+    color: var(--main-bg-color);
+    background-color: #fff;
+    border: 2px solid var(--main-bg-color);
+    transform: scale(0.97);
+}
+
+
+@media only screen and (max-width: 1077px) {
+    .form .info div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .form {
+        width: 86%;
+    }
+}
+
+@media only screen and (max-width: 962px) {
+    .form {
+        margin: 0px auto auto;
+    }
+    .form .info div {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .form .info {
+        gap: 8px;
+    }
+}
+@media only screen and (max-width: 684px) {
+    .form {
+        width: 100%;
+    }
+    
+}
+@media only screen and (max-width: 512px) {
+    .form {
+        padding: 0;
+        margin-top: 24px;
+    }
+    
+}
+
