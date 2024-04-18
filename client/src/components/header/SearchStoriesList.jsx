@@ -12,7 +12,6 @@ export const SearchStoriesList = ({ searchTerm }) => {
     opacity: '',
   })
  
-
   useEffect(() => {
     if (searchTerm) {
       setStylesInfo({...stylesInfo, display: 'block'})

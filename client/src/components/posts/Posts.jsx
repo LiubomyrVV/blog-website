@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom"
-import { Container } from "../container/Container"
-import styles from './posts.module.css'
 import { PAGES } from "../../router/routes"
+
+import styles from './posts.module.css'
+import { Container } from "../container/Container"
 
 
 export const Posts = ({ title = 'Popular Post', count = 3, main = {}, rout = PAGES.BLOG }) => {

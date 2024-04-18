@@ -1,19 +1,14 @@
-
-
 import styles from './footer.module.css'
 import { Logo } from '../logo/Logo'
-import { Link, NavLink } from 'react-router-dom'
 import { PAGES } from '../../router/routes'
+import { Link, NavLink } from 'react-router-dom'
 
 
 export const Footer = () => {
-
   const handleOnClick = () => {
     localStorage.setItem('isRedirectFromFooter', true)
   }
  
-  
-
   return (
     <footer>
     <div className={styles.footerContainer}>

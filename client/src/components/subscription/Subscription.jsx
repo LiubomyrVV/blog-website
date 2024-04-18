@@ -1,4 +1,3 @@
-
 import styles from './subscription.module.css'
 import { Background } from '../background/Background'
 import { Controller, useForm } from 'react-hook-form';

@@ -1,8 +1,12 @@
-import { useEffect, useReducer, useState } from 'react'
-import styles from './burger.module.css'
+import { useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
+
+import styles from './burger.module.css'
+
 import { PAGES } from '../../router/routes'
+
 import burgerReducer, { BURGER_ACTIONS, initialBurgerState } from '../../reducers/burgerReducer'
+
 import { debounce } from '../../functions/functions'
 import { screen } from '../../functions/Screen'
 
@@ -30,10 +34,11 @@ export const Burger = ({ setIsInputActive, isInputActive }) => {
         else screen.enableScroll()
     }, [isOpen])
 
- 
+
     const handleCheckboxChange = (event) => {
         dispatch(event.target.checked ? BURGER_ACTIONS.OPEN : BURGER_ACTIONS.CLOSE)
     }
+
     return (
         <div className={styles.burger}
 
@@ -63,17 +68,15 @@ export const Burger = ({ setIsInputActive, isInputActive }) => {
                     display: isOpen ? 'grid' : 'hidden',
                     transform: isOpen ? 'translateX(50%)' : 'translateX(100%)',
 
-                }}
-            >
-
+                }}>
                 <ul className={styles.list}>
                     <li onClick={() => {
                         screen.disableScroll()
                         setIsInputActive(true)
                         dispatch(BURGER_ACTIONS.CLOSE)
-                    }} className={styles.search}> 
-                    
-                       <div style={{color: '#fff', fontSize: '32px', marginLeft: '30px'}}><span style={{color: 'rgb(34, 9, 92)'}}>S</span>earch</div></li>
+                    }} className={styles.search}>
+
+                        <div style={{ color: '#fff', fontSize: '32px', marginLeft: '30px' }}><span style={{ color: 'rgb(34, 9, 92)' }}>S</span>earch</div></li>
 
                     <li><NavLink to={PAGES.HOME} style={({ isActive }) => {
                         return { color: isActive ? '#22095c' : null }

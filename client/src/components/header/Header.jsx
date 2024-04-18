@@ -15,7 +15,6 @@ import { SearchStoriesList } from './SearchStoriesList'
 let timerId;
 export const Header = () => {
   const [isInputActive, setIsInputActive] = useState(false)
-  const [isSearchActive, setIsSearchActive] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
   const { width } = useResize()
@@ -25,14 +24,8 @@ export const Header = () => {
   const redirect = () => {
     navigate(PAGES.BLOG)
   }
-  const handleOnSearchFocus = () => {
-    setIsSearchActive(true)
-  }
-  const handleOnSearchBlur = () => {
-    setIsSearchActive(false)
-  }
   const handleOnSearchChange = (e) => {
-    const searchTerm  = e.target.value
+    const searchTerm = e.target.value
 
     clearTimeout(timerId)
 
@@ -78,13 +71,11 @@ export const Header = () => {
               transform: isInputActive ? 'translateX(0%)' : 'translateX(100%)'
             }}>
 
-              <input 
-              onFocus={handleOnSearchFocus} 
-              onBlur={handleOnSearchBlur} 
-              onChange={handleOnSearchChange}
-              type='text' 
-              placeholder='Write something..' />
-              <SearchStoriesList searchTerm={searchTerm} /> 
+              <input
+                onChange={handleOnSearchChange}
+                type='text'
+                placeholder='Write something..' />
+              <SearchStoriesList searchTerm={searchTerm} />
             </div>
 
             <li><NavLink to={PAGES.CONTACT} className={({ isActive, isPending }) =>

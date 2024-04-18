@@ -1,15 +1,11 @@
-import styles from './contactForm.module.css'
-import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
+
+import styles from './contactForm.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
   const { handleSubmit, control, clearErrors, formState: { errors }} = useForm();
-
-
-
-
 
   const submit = async (data) => {
     const { name, email, phone, subject, message } = data;
@@ -37,7 +33,6 @@ export const ContactForm = () => {
   }
 
 
- 
   return (
     <>
    
@@ -179,7 +174,6 @@ export const ContactForm = () => {
             </>
             )}
           />
-           
         </div>
         <button type="submit"> Submit </button>
       </form>

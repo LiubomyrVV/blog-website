@@ -8,6 +8,7 @@
     border-radius: 16px;
     border: 2px solid rgb(215, 189, 189);
 }
+
 .search input:focus {
     border: 2px solid var(--main-bg-color-hover);
 }
@@ -29,7 +30,6 @@ header {
     align-items: center;
 
     width: 100%;
-
 }
 
 .list {
@@ -38,20 +38,24 @@ header {
     gap: 24px;
     
 }
+
 .list .relativeContainer {
     display: flex;
     align-items: center;
     gap: 24px;
     transition: 0.6s ease-in-out;
 }
+
 .list  li > a {
     color: #333333;
 }
+
 .list  li,
 .list > button {
     font-size: 14px;
     font-weight: 500;
 }
+
 .button {
     position: relative;
     z-index: 10;
@@ -63,12 +67,13 @@ header {
     background-color: var(--main-bg-color);
     transition: 100ms ease-in;
 }
+
 .button:hover {
     background-color: var(--main-bg-color-hover);
     
- }
+}
+
 .button:active {
-    
     color: var(--main-bg-color);
     background-color: #fff;
     border: 2px solid var(--main-bg-color);
@@ -85,6 +90,5 @@ header {
         display: flex;
         align-items: center;
         gap: 14px;
-        
     }
 }

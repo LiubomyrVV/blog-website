@@ -10,72 +10,66 @@
     top: -22px;
     left: 0;
     z-index: 1000;
-    
-  }
+}
   
-  .label {
-    display: flex;
-    flex-direction: column;
-    width: 70px;
-    cursor: pointer;
-    transform: scale(0.6);
-    z-index: 1001;
-    position: absolute;
-    right: 32px;
-    top: 8px;
-  }
-  
-  .label .span {
-    background: var(--main-bg-color-hover);
-    border-radius: 10px;
-    height: 7px;
-    margin: 7px 0;
-    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  
-  }
-  
-  
-  .span:nth-of-type(1) {
-    width: 50%;
-  
-  }
-  
-  .span:nth-of-type(2) {
-    width: 100%;
-  }
-  
-  
-  .span:nth-of-type(3) {
-    width: 75%;
-  
-  }
-  
-  
-  .input[type="checkbox"] {
-    display: none;
-  
-  }
-  
-  
-  .input[type="checkbox"]:checked~.span:nth-of-type(1) {
-    transform-origin: bottom;
-    transform: rotatez(45deg) translate(8px, 0px)
-  }
-  
-  
-  .input[type="checkbox"]:checked~.span:nth-of-type(2) {
-  
-    transform-origin: top;
-    transform: rotatez(-45deg)
-  }
-  
-  
-  .input[type="checkbox"]:checked~.span:nth-of-type(3) {
-  
-    transform-origin: bottom;
-    width: 50%;
-    transform: translate(30px, -11px) rotatez(45deg);
-  }
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  transform: scale(0.6);
+  z-index: 1001;
+  position: absolute;
+  right: 32px;
+  top: 8px;
+}
+
+.label .span {
+  background: var(--main-bg-color-hover);
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.span:nth-of-type(1) {
+  width: 50%;
+
+}
+
+.span:nth-of-type(2) {
+  width: 100%;
+}
+
+.span:nth-of-type(3) {
+  width: 75%;
+}
+
+.input[type="checkbox"] {
+  display: none;
+
+}
+
+.input[type="checkbox"]:checked~.span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px)
+}
+
+
+.input[type="checkbox"]:checked~.span:nth-of-type(2) {
+
+  transform-origin: top;
+  transform: rotatez(-45deg)
+}
+
+
+.input[type="checkbox"]:checked~.span:nth-of-type(3) {
+
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
+}
+
 .list {
     display: flex;
     flex-direction: column;
@@ -103,40 +97,29 @@
   justify-content: space-between;
   margin-left: 28px;
   margin-bottom: 24px;
-  
 }
 
 .search:hover {
   cursor: pointer;
-  
 }
 
 @media only screen and (max-width: 450px) {
   .search {
-  
     margin-left: 10px;
-  
-    
   }
 }
 @media only screen and (max-width: 400px) {
     .label {
         right: 12px;
     }
+
     .search {
-    
       margin-left: 0;
-    
-      
     }
 }
 @media only screen and (max-width: 360px) {
- 
   .search {
-  
     margin-left: -20px;
-  
-    
   }
 }
 

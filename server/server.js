@@ -7,7 +7,6 @@ const { port } = require("./constant");
 
 const getStoriesList = require("./getStoriesList")
 
-
 const data = {
     stories: {} // stories: {stories: [], title: string}
 }
@@ -36,7 +35,6 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true, 
 
-    
     auth: {
       user: 'liubomyrpoland@gmail.com', 
       pass: 'qbrimpcmlbdbabas' 
@@ -49,10 +47,7 @@ app.post('/confirm-subscription', async (req, res) => {
         from: 'liubomyrpoland@gmail.com',
         to: email,
         subject: 'Subscription',
-        html: 
-          
-           '<strong> Congratulations! You have successfully subscribed to our service.</strong>'
-          
+        html: '<strong> Congratulations! You have successfully subscribed to our service.</strong>'
       };
 
     transporter.sendMail(mailOptions, function(error, info) {
@@ -67,8 +62,7 @@ app.post('/confirm-subscription', async (req, res) => {
 })
 app.post('/send-email', async (req, res) => {
     const { email, phone, name,  subject, message } = req.body;
-    
-
+  
     const mailOptions = {
       from: 'liubomyrpoland@gmail.com',
       to: email,
@@ -82,7 +76,6 @@ app.post('/send-email', async (req, res) => {
         </div>`
        
     };
-  
   
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {
