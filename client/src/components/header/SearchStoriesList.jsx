@@ -7,21 +7,21 @@ import { Link } from 'react-router-dom'
 export const SearchStoriesList = ({ searchTerm }) => {
   const [stories, setStories] = useState([])
   const [stylesInfo, setStylesInfo] = useState({
-    display: '',
-    transform: '',
-    opacity: '',
+    display: '0',
+    opacity: '0',
+    transform: 'translateY(-10%)'
   })
  
   useEffect(() => {
     if (searchTerm) {
-      setStylesInfo({...stylesInfo, display: 'block'})
+      setStylesInfo({...stylesInfo, display: 'flex'})
       setTimeout(() => setStylesInfo({...stylesInfo,
         opacity: '1',
         transform: 'translateY(0)',
       }))
     } else {
       setStylesInfo({...stylesInfo, display: 'none'})
-      setTimeout(() => setStylesInfo({...stylesInfo, opacity: '0', transform: 'translateY(-10%)'}))
+      setTimeout(() => setStylesInfo({...stylesInfo, opacity: '0', transform: 'translateY(-10%)'} ))
     }
   }, [searchTerm])
 
@@ -29,8 +29,8 @@ export const SearchStoriesList = ({ searchTerm }) => {
     getStories({ searchTerm }).then(res => {setStories(res.stories)})
   }, [searchTerm])
 
-  return (
-    <ul style={{opacity: stylesInfo.opacity, transform: stylesInfo.transform,  display: stylesInfo.display}} className={styles.list}>
+  return (  
+    <ul style={{display: stylesInfo.display, opacity: stylesInfo.opacity, transform: stylesInfo.transform,}} className={styles.list}>
       {stories.length ? stories.map(({longURL, thumbnailImage, title}, idx) => 
         
         <li key={idx}>

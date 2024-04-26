@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useResize } from '../../hooks/useResize'
 
@@ -13,16 +13,21 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
   const { width } = useResize()
 
   const [filteredStories, setFilteredStories] = useState([])
+  
+  useEffect(() => {
+   
+    getStories({ searchTerm: '' }).then(res => { setFilteredStories(res.stories) })
+  },[])
 
   const handleInputChange = (e) => {
+    
+
     const searchTerm = e.target.value
 
     clearTimeout(timerId)
     timerId = setTimeout(() => {
       getStories({ searchTerm }).then(res => { setFilteredStories(res.stories) })
     }, 200)
-
-    console.log(filteredStories)
   }
 
   return (
@@ -46,9 +51,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
         onChange={handleInputChange}
       /> </div>
 
-      {!filteredStories.length ? <div style={{ textAlign: 'center', color: '#fff' }}>Nothing found ;d</div> : null}
       <div className={styles.list}
-        style={{ opacity: filteredStories.length ? '1' : '0' }}
       >
 
         <ul
@@ -64,7 +67,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
             </>)
           }
 
-          ) : <div>nothing</div>}
+          ) : <div style={{color: '#fff', textAlign: 'center'}}>Nothing found</div>}
         </ul>
       </div>
     </div>
