@@ -90,7 +90,6 @@ app.post('/send-email', async (req, res) => {
 
 app.get(`/stories/list`, (req, res) => {
     const { stories } = data; // stories: {stories: [], title: string}
-    console.log(req.query)
     if (req.query.count) {
         const storiesCount = req.query.count; 
         const sliced = stories.stories.slice(0, storiesCount)

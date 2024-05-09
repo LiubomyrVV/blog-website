@@ -49,19 +49,23 @@ export const ContactForm = () => {
             name="name"
             control={control}
             rules={{
-              required: 'Username is required',
               minLength: {
-                value: 3,
-                message: 'Username should be at least 3 characters',
+                value: 8,
+                message: "Password must be at least 8 characters long"
               },
               maxLength: {
                 value: 20,
-                message: 'Username should not exceed 20 characters',
+                message: "Password must not exceed 20 characters"
               },
+              pattern: {
+                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+                message: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+              },
+              required: 'Password is required'
             }}
             render={({ field }) => (
               <>
-                <input type="text" onClick={()=>clearErrors('name')} {...field} />
+                <input type="text" {...field} />
                 <p style={{
               opacity: errors.name ? `1` : `0`
             }}>{errors.name && errors.name.message}</p>
@@ -93,7 +97,7 @@ export const ContactForm = () => {
             }}
             render={({ field }) => (
               <>
-                <input type="text" onClick={()=>clearErrors('email')} {...field} />
+                <input type="text"  {...field} />
                 <p style={{
               opacity: errors.email ? `1` : `0`
             }}>{errors.email && errors.email.message}</p>
@@ -116,7 +120,7 @@ export const ContactForm = () => {
             }}
             render={({ field }) => (
               <>
-                <input type="text" onClick={()=>clearErrors('phone')} {...field} />
+                <input type="text" {...field} />
                 <p style={{
               opacity: errors.phone ? `1` : `0`
             }}>{errors.phone && errors.phone.message}</p>
@@ -143,7 +147,7 @@ export const ContactForm = () => {
             }}
             render={({ field }) => (
               <>
-                <input type="text" onClick={()=>clearErrors('subject')} {...field} />
+                <input type="text" {...field} />
                 <p style={{
               opacity: errors.subject ? `1` : `0`
             }}>{errors.subject && errors.subject.message}</p>
@@ -167,7 +171,7 @@ export const ContactForm = () => {
             }}
             render={({ field }) => (
               <>
-                <textarea type="text" onClick={()=>clearErrors('message')} {...field} />
+                <textarea type="text"  {...field} />
                 <p style={{
               opacity: errors.message ? `1` : `0`
             }}>{errors.message && errors.message.message}</p>

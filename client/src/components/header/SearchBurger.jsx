@@ -67,7 +67,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
             </>)
           }
 
-          ) : <div style={{color: '#fff', textAlign: 'center'}}>Nothing found</div>}
+          ) : <div style={{color: '#fff', textAlign: 'center', margin: '14px 0'}}>Nothing found</div>}
         </ul>
       </div>
     </div>
