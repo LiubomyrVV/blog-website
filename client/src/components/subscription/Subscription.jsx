@@ -13,7 +13,6 @@ const Subscription = () => {
       });
 
     const notify = (status) => {
-        
         if (status === 'ok') {
             reset({email: ''})
             toast.success('Successfully subscribed')
