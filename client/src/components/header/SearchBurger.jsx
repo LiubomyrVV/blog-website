@@ -17,6 +17,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
   useEffect(() => {
    
     getStories({ searchTerm: '' }).then(res => { setFilteredStories(res.stories) })
+
   },[])
 
   const handleInputChange = (e) => {
@@ -43,7 +44,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
           setIsInputActive(!isInputActive)
         }}
 
-      ><i class="bi bi-x-lg"></i></div>
+      ><i className="bi bi-x-lg"></i></div>
       <h3 className={styles.title}><span style={{ color: ' rgb(34, 9, 92)' }}>S</span>earch</h3>
       <div className={styles.search}><input
         type='text'
@@ -54,17 +55,18 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
       <div className={styles.list}
       >
 
-        <ul
+        <ul  
         >
-          {filteredStories.length ? filteredStories.map(({ title, longUrl, contentLength, thumbnailImage }, idx) => {
-            return (<>
+          {filteredStories.length ? filteredStories.map(({ title, longURL, contentLength, thumbnailImage }, idx) => {
+          
+            return (
               <li key={idx}>
-                <Link value={contentLength} to={longUrl} target='_blank'>
+                <Link value={contentLength} to={longURL} target='_blank'>
                   <img src={thumbnailImage} alt="" width='62px' />
                   <p>{title}</p>
                 </Link>
               </li>
-            </>)
+            )
           }
 
           ) : <div style={{color: '#fff', textAlign: 'center', margin: '14px 0'}}>Nothing found</div>}

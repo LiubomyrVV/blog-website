@@ -55,7 +55,7 @@
     width: fit-content;
 
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
 }
 
 @media only screen and (max-width: 649px) {
@@ -63,6 +63,7 @@
         position: static;
         color: #7C4EE4;
         width: fit-content;
+        bottom: 0px;
     }
 }
 

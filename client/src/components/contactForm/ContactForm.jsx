@@ -5,11 +5,20 @@ import styles from './contactForm.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
-  const { handleSubmit, control, clearErrors, formState: { errors }} = useForm();
+  const { reset, handleSubmit, control, formState: { errors }} = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '', 
+      message: '',
+
+    }
+  });
 
   const submit = async (data) => {
     const { name, email, phone, subject, message } = data;
-  
+    
     try {
       const response = await fetch('http://localhost:3001/send-email', {
         method: 'POST',
@@ -22,7 +31,15 @@ export const ContactForm = () => {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success('The message was successfully sent.')
+
+        reset({email: '', name: '', subject: '', phone: '', message: ''})
+        
+        if (!toast.isActive(1, "contactFormSubmit")) {
+          toast('Successfully sended', {
+              type: "success",
+              toastId: 1                      
+          })
+}
       } else {
         throw new Error(data.message);
       }
@@ -36,7 +53,7 @@ export const ContactForm = () => {
   return (
     <>
    
-    <ToastContainer />
+    <ToastContainer toast={1} containerId={'contactFormSubmit'} />
     <div className={styles.form}>
    
       <form onSubmit={handleSubmit(submit)}>
@@ -50,18 +67,14 @@ export const ContactForm = () => {
             control={control}
             rules={{
               minLength: {
-                value: 8,
-                message: "Password must be at least 8 characters long"
+                value: 3,
+                message: "Name must be at least 8 characters long"
               },
               maxLength: {
-                value: 20,
-                message: "Password must not exceed 20 characters"
+                value: 14,
+                message: "Name must not exceed 20 characters"
               },
-              pattern: {
-                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-                message: "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
-              },
-              required: 'Password is required'
+              required: 'Name is required'
             }}
             render={({ field }) => (
               <>
@@ -73,7 +86,7 @@ export const ContactForm = () => {
             )}
           />
         </div>
-          
+    
 
           <div className={styles.email}>
             <label>Email:</label>
@@ -164,8 +177,8 @@ export const ContactForm = () => {
             rules={{
               required: 'Message is required',
               minLength: {
-                value: 20,
-                message: 'Message should be at least 20 characters',
+                value: 10,
+                message: 'Message should be at least 10 characters',
               },
            
             }}

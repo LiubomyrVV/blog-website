@@ -6,12 +6,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Subscription = () => {
-    const { reset, handleSubmit, control, clearErrors, formState: { errors } } = useForm();
+    const { reset, handleSubmit, control, clearErrors, formState: { errors } } = useForm({
+        defaultValues: {
+          email: '',
+        }
+      });
 
     const notify = (status) => {
         
         if (status === 'ok') {
-            reset({ ['email']: '' })
+            reset({email: ''})
             toast.success('Successfully subscribed')
         } else {
             toast.error('Error')
@@ -31,7 +35,6 @@ const Subscription = () => {
             });
 
             const data = await response.json();
-            console.log(errors)
             if (response.ok) {
                 notify('ok')
 

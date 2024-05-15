@@ -10,10 +10,9 @@ export const Container = ({ count }) => {
 
     useEffect(() => {
         getStories({ count }).then(res => {
-            console.log(res.stories)
             setStories(res.stories)
         })
-    }, [])
+    }, [count])
 
     return (
         <ul className={styles.cartContainer}>

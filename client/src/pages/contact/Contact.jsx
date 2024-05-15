@@ -18,17 +18,17 @@ export const Contact = () => {
         </div>
         <ul className={styles.carts}>
             <li>
-              <figure className={styles.icon}><i class="bi bi-house"></i></figure>
+              <figure className={styles.icon}><i className="bi bi-house"></i></figure>
               <h4 className={styles.title}>Office</h4>
               <p className={styles.info}>Victoria Street, London, UK</p>
             </li>
             <li>
-              <figure className={styles.icon}><i class="bi bi-envelope"></i></figure>
+              <figure className={styles.icon}><i className="bi bi-envelope"></i></figure>
               <h4 className={styles.title}>Email</h4>
               <p className={styles.info}>hello@zarrin.com</p>
             </li>
             <li>
-              <figure className={styles.icon}><i class="bi bi-telephone"></i></figure>
+              <figure className={styles.icon}><i className="bi bi-telephone"></i></figure>
               <h4 className={styles.title}>Phone</h4>
               <p className={styles.info}>(001) 2342 3451</p>
             </li>
