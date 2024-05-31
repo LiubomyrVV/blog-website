@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import styles from './contactForm.module.css'
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from '../../service/api';
 
 export const ContactForm = () => {
   const { reset, handleSubmit, control, formState: { errors }} = useForm({
@@ -20,7 +21,7 @@ export const ContactForm = () => {
     const { name, email, phone, subject, message } = data;
     
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch(`${API_URL}/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

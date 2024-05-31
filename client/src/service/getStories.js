@@ -1,10 +1,11 @@
 import axios from "axios";
-import { debounce } from "../functions/functions";
+import { API_URL } from "./api";
+
 
 
 const options = {
     method: 'GET',
-    url: `http://localhost:3001/stories/list`,
+    url: `${API_URL}/stories/list`,
    
 };
 

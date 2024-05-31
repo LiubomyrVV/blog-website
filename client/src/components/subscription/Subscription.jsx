@@ -4,6 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from '../../service/api';
 
 const Subscription = () => {
     const { reset, handleSubmit, control, clearErrors, formState: { errors } } = useForm({
@@ -25,7 +26,7 @@ const Subscription = () => {
         const { email } = data;
 
         try {
-            const response = await fetch('http://localhost:3001/confirm-subscription', {
+            const response = await fetch(`${API_URL}/confirm-subscription`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
