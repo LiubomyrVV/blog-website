@@ -27,9 +27,7 @@ if (data.stories.stories) {
 const app = express();
 
 app.use(express.json(), cors());
-app.use('/', (req, res) => {
-   res.send('../client/public/index.html')
-})
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
