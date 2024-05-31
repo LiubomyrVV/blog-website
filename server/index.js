@@ -27,7 +27,9 @@ if (data.stories.stories) {
 const app = express();
 
 app.use(express.json(), cors());
-
+app.use('/', (req, res) => {
+   res.send('Salam')
+})
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
