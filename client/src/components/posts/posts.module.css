@@ -63,7 +63,7 @@
     font-size: 14px;
     font-weight: 500;
     transition: 100ms;
-   
+    background: rgb(255, 255, 255);
 }
 .cart button:hover {
     background-color: var(--main-bg-color-hover);

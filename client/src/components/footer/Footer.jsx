@@ -27,10 +27,10 @@ export const Footer = () => {
         </ul>
 
         <ul className={styles.socials}>
-            <li><Link>FB</Link></li>
-            <li><Link>IG</Link></li>
-            <li><Link>LN</Link></li>
-            <li><Link>YT</Link></li>
+            <li  title='FaceBook'><Link>FB</Link></li>
+            <li  title='Instagram'><Link>IG</Link></li>
+            <li  title='Linkedin'><Link>LN</Link></li>
+            <li  title='YouTube'><Link>YT</Link></li>
         </ul>
       </div>
 
