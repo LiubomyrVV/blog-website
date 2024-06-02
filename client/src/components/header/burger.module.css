@@ -20,9 +20,10 @@
   transform: scale(0.6);
   z-index: 1001;
   position: absolute;
-  right: 32px;
-  top: 8px;
+  right: 64px;
+  top: 68px;
 }
+
 
 .label .span {
   background: var(--main-bg-color-hover);
@@ -110,7 +111,7 @@
 }
 @media only screen and (max-width: 400px) {
     .label {
-        right: 12px;
+      right: 56px;
     }
 
     .search {
@@ -120,6 +121,9 @@
 @media only screen and (max-width: 360px) {
   .search {
     margin-left: -20px;
+  }
+  .label {
+    right: 42px;
   }
 }
 

@@ -9,9 +9,12 @@ export const Container = ({ count }) => {
     const [stories, setStories] = useState([])
 
     useEffect(() => {
-        getStories({ count }).then(res => {
-            setStories(res.stories)
-        })
+
+        getStories({ count })
+            .then(res => {
+                setStories(res.stories)
+            })
+            .catch(err => console.error(err))
     }, [count])
 
     return (

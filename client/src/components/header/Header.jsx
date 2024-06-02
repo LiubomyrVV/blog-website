@@ -12,6 +12,7 @@ import { SearchStoriesList } from './SearchStoriesList'
 
 
 
+
 let timerId;
 export const Header = () => {
   const [isInputActive, setIsInputActive] = useState(false)
@@ -36,7 +37,7 @@ export const Header = () => {
 
   return (
     <header>
-
+  
       <div className={styles.wrapper}>
         <Logo />
         <SearchBurger

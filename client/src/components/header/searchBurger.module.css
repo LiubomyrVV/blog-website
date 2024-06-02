@@ -2,7 +2,7 @@
     position: fixed;
    
 
-    height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 1000;
     background-color: #7C4EE4;
@@ -104,6 +104,7 @@
 
 .list img {
     border-radius: 6px;
+    max-width: 62px;
 }
 
 .list p {

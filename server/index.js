@@ -58,7 +58,7 @@ app.post('/confirm-subscription', async (req, res) => {
           res.status(200).json({ message: 'Email sent successfully' });
         }
       });
-})
+}),
 app.post('/send-email', async (req, res) => {
     const { email, phone, name,  subject, message } = req.body;
   
@@ -85,7 +85,7 @@ app.post('/send-email', async (req, res) => {
         res.status(200).json({ message: 'Email sent successfully' });
       }
     });
-});
+})
 
 app.get(`/stories/list`, (req, res) => {
     const { stories } = data; // stories: {stories: [], title: string}
