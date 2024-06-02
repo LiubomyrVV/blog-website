@@ -5,7 +5,7 @@
     background-color: #8878d7;
     transition: 2s;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 1100;
     left: 0;
