@@ -15,19 +15,37 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
   const [filteredStories, setFilteredStories] = useState([])
   
   useEffect(() => {
-   
-    getStories({ searchTerm: '' }).then(res => { setFilteredStories(res.stories) })
-
+    getStories({ searchTerm: '' })
+      .then(res => { 
+        if (res && res.stories) {
+          setFilteredStories(res.stories)
+        } else {
+          setFilteredStories([])
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching stories:', error)
+        setFilteredStories([])
+      });
   },[])
 
   const handleInputChange = (e) => {
-    
-
     const searchTerm = e.target.value
 
     clearTimeout(timerId)
     timerId = setTimeout(() => {
-      getStories({ searchTerm }).then(res => { setFilteredStories(res.stories) })
+      getStories({ searchTerm })
+        .then(res => {
+          if (res && res.stories) {
+            setFilteredStories(res.stories)
+          } else {
+            setFilteredStories([])
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching stories:', error)
+          setFilteredStories([])
+        })
     }, 200)
   }
 
@@ -53,7 +71,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
       /> </div>
 
       <div className={styles.list}
-      >
+      > 
 
         <ul  
         >

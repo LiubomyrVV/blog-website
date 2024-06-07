@@ -9,17 +9,27 @@ export const Container = ({ count }) => {
     const [stories, setStories] = useState([])
 
     useEffect(() => {
-
-        getStories({ count })
+        const getData = () => {
+            getStories({ count })
             .then(res => {
-                setStories(res.stories)
+                if (res && res.stories) {
+                    setStories(res.stories);
+                } else {
+                    setStories([]); 
+                }
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                console.error('Error fetching stories:', err);
+                getData()
+            });
+        }
+        getData()
+        
     }, [count])
 
     return (
         <ul className={styles.cartContainer}>
-            {stories.map(({ id, title, longURL, thumbnailImage, resourceType, published
+            {stories.length ? stories.map(({ id, title, longURL, thumbnailImage, resourceType, published
             }, idx) => {
 
                 return <li className={styles.item} key={idx}>
@@ -38,7 +48,7 @@ export const Container = ({ count }) => {
                     <p className={styles.description}> </p>
                     <a href={longURL} target='_blank' rel='noreferrer' className={styles.anchor}>Read More..</a>
                 </li>
-            })}
+            }) : <div style={{ color: '#fff', textAlign: 'center', margin: '14px 0' }}>Loading</div>}
         </ul>
     )
 }

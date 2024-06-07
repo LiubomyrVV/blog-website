@@ -16,7 +16,7 @@
 	margin: auto;
 	width: 16em;
 	height: auto;
-    color: var(--fg)
+    color: #e3dbff;
 }
 .bike__body,
 .bike__front,
@@ -28,7 +28,7 @@
 .bike__spokes-spin,
 .bike__tire {
 	animation: bikeBody 3s ease-in-out infinite;
-	stroke: var(--primary);
+	stroke: #b7abfd;
 	transition: stroke var(--trans-dur);
 }
 .bike__front {

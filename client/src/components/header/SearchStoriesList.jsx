@@ -26,7 +26,22 @@ export const SearchStoriesList = ({ searchTerm }) => {
   }, [searchTerm])
 
   useEffect(() => {
-    getStories({ searchTerm }).then(res => {setStories(res.stories)})
+    if (searchTerm) {
+      getStories({ searchTerm })
+        .then(res => {
+          if (res && res.stories) {
+            setStories(res.stories);
+          } else {
+            setStories([]);
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching stories:', err);
+          setStories([]); 
+        })
+      } else {
+        setStories([]);
+      }
   }, [searchTerm])
 
   return (  
