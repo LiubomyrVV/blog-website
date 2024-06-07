@@ -221,5 +221,8 @@
         padding: 0;
         margin-bottom:42px;
     }
+    .featuredContainer .wrapper img {
+        min-width: 100%;
+    }
     
 }

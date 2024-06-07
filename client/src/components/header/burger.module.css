@@ -20,8 +20,8 @@
   transform: scale(0.6);
   z-index: 1001;
   position: absolute;
-  right: 64px;
-  top: 68px;
+  right: 12px;
+  top: 10px;
 }
 
 
@@ -76,7 +76,7 @@
     flex-direction: column;
     gap: 14px;
     position: absolute;
-    top: 164px;
+    top: 128px;
     left: 19px;
 
     width: auto;
@@ -110,10 +110,6 @@
   }
 }
 @media only screen and (max-width: 400px) {
-    .label {
-      right: 56px;
-    }
-
     .search {
       margin-left: 0;
     }
@@ -122,8 +118,4 @@
   .search {
     margin-left: -20px;
   }
-  .label {
-    right: 42px;
-  }
 }
-
