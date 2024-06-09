@@ -5,6 +5,12 @@ import { getStories } from '../../service/getStories'
 import styles from './container.module.css'
 import { convertToDate } from '../../functions/functions'
 
+const getDataDelay = 2000;
+
+let tries = 0;
+let maxTries = 5;
+let timerId;
+
 export const Container = ({ count }) => {
     const [stories, setStories] = useState([])
 
@@ -13,23 +19,31 @@ export const Container = ({ count }) => {
             getStories({ count })
             .then(res => {
                 if (res && res.stories) {
-                    setStories(res.stories);
+                    setStories(res.stories)
                 } else {
-                    setStories([]); 
+                    setStories([]);
                 }
             })
             .catch(err => {
-                console.error('Error fetching stories:', err);
-                getData()
-            });
+                if (tries <= maxTries) {
+                    timerId = setTimeout(() => {
+                        getData()
+                    }, getDataDelay)
+                    tries++
+                } else console.error('Error fetching stories:', err) 
+            })
         }
         getData()
-        
-    }, [count])
+
+        return () =>  {
+            tries = 0
+            clearTimeout(timerId)
+        }
+    }, [count]) 
 
     return (
         <ul className={styles.cartContainer}>
-            {stories.length ? stories.map(({ id, title, longURL, thumbnailImage, resourceType, published
+            {stories.length ? stories.map(({ title, longURL, thumbnailImage, resourceType, published
             }, idx) => {
 
                 return <li className={styles.item} key={idx}>
