@@ -1,5 +1,9 @@
 My Awesome Blog Website is a platform for reading articles and stories.
 
+Stack:
+Node.js, React.JS, CSS.
+for more info --> check /client/package.json and /server/package.json files ;)
+
 Features
 Responsive Design: Ensures optimal viewing experience across devices.
 Search Functionality: Quickly find articles using the search feature.
