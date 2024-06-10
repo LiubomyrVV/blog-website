@@ -21,7 +21,12 @@ export const Container = ({ count }) => {
                 if (res && res.stories) {
                     setStories(res.stories)
                 } else {
-                    setStories([]);
+                    if (tries <= maxTries) {
+                        timerId = setTimeout(() => {
+                            getData()
+                        }, getDataDelay)
+                        tries++
+                    } else setStories([]);
                 }
             })
             .catch(err => {
