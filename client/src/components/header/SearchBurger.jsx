@@ -80,7 +80,7 @@ export const SearchBurger = ({ isInputActive, setIsInputActive }) => {
             return (
               <li key={idx}>
                 <Link value={contentLength} to={longURL} target='_blank'>
-                  <img src={thumbnailImage} alt="" width='62px' />
+                  <img src={thumbnailImage} alt="" width='62px' height='42px'/>
                   <p>{title}</p>
                 </Link>
               </li>
