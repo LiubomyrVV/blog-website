@@ -32,7 +32,9 @@ body {
     padding: 60px 10%;
     position: relative; 
     overflow-x: hidden;  
-    
+
+    max-width: 1680px;
+    margin: 0 auto;
 }
 html {
 
